@@ -1,0 +1,2 @@
+TaskController:
+    resource: "routing/TaskController.yml"

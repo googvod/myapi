@@ -1,0 +1,30 @@
+AppBundle\Entity\Task:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TaskRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        content:
+            type: text
+        createdAt:
+            type: datetime
+            column: created_at
+        completed:
+            type: boolean
+        user:
+            type: integer
+            unsigned: true
+            nullable: false
+    lifecycleCallbacks: {  }
+#    manyToOne:
+#        project:
+#          targetEntity: AppBundle\Entity\User
+#          inversedBy: tasks
+#          joinColumn:
+#            name: user
+#            referencedColumnName: id
