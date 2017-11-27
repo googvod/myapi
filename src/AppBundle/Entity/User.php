@@ -11,17 +11,17 @@ class User extends BaseUser
     /**
      * @var int
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      */
-    private $name;
+    protected  $name;
 
     /**
      * @var string
      */
-    private $password;
+    protected $password;
 
 
     /**
@@ -80,6 +80,14 @@ class User extends BaseUser
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return true;
     }
 }
 
