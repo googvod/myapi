@@ -6,9 +6,6 @@ NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /
 
-TaskController:
+AppBundle:
     resource: "@AppBundle/Resources/config/routing.yml"
     prefix:   /api
-
-api_login_check:
-    path: /api/login

@@ -2,6 +2,8 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Task
  */
@@ -19,6 +21,8 @@ class Task
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(type="datetime")
      */
     private $createdAt;
 
@@ -26,6 +30,11 @@ class Task
      * @var bool
      */
     private $completed;
+
+    /**
+     * @var int
+     */
+    private $user;
 
 
     /**
@@ -65,13 +74,11 @@ class Task
     /**
      * Set createdAt
      *
-     * @param \DateTime $createdAt
-     *
      * @return Task
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt()
     {
-        $this->createdAt = $createdAt;
+        $this->createdAt = new \DateTime();
 
         return $this;
     }
@@ -108,6 +115,30 @@ class Task
     public function getCompleted()
     {
         return $this->completed;
+    }
+
+    /**
+     * Set user
+     *
+     * @param int $user
+     *
+     * @return Task
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return bool
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
 

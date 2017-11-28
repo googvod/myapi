@@ -15,5 +15,7 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+!/var/jwt
+/var/jwt/*
 /.idea
 composer.phar

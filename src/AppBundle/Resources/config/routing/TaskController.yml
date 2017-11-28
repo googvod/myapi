@@ -1,5 +1,30 @@
 taskList:
     path: /tasks
     defaults: { _controller: AppBundle:Task:list }
-    requirements :
-      method : GET
+    methods : GET
+
+taskCreate:
+    path: /task/create
+    defaults: { _controller: AppBundle:Task:edit }
+    methods : PUT
+
+taskUpdate:
+    path: /task/{id}
+    defaults: { _controller: AppBundle:Task:edit }
+    requirements:
+        id: \d+
+    methods: POST
+
+taskGet:
+    path: /task/{id}
+    defaults: { _controller: AppBundle:Task:get }
+    requirements:
+        id: \d+
+    methods: GET
+
+taskDelete:
+    path: /task/{id}
+    defaults: { _controller: AppBundle:Task:delete }
+    requirements:
+        id: \d+
+    methods: DELETE
