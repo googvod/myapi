@@ -1,18 +1,19 @@
 <?php
 
-namespace AppBundle\Security;
+namespace AppBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Lexik\Bundle\JWTAuthenticationBundle\Exception\ExpiredTokenException;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Class SecurityController
- * @package AppBundle\Security
+ * Class BaseController
+ * @package AppBundle
  */
-class SecurityController extends Controller
+class BaseController extends FOSRestController
 {
     /**
      * @return AppBundle:User
@@ -26,6 +27,10 @@ class SecurityController extends Controller
                     ->getCurrentRequest());
         } catch (ExpiredTokenException $e) {
             throw new AccessDeniedHttpException('Token is expired');
+        }
+
+        if (!$credentials) {
+            throw new AccessDeniedHttpException('Token not found');
         }
 
         return $this->getDoctrine()

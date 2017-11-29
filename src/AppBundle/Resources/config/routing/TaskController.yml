@@ -6,14 +6,14 @@ taskList:
 taskCreate:
     path: /task/create
     defaults: { _controller: AppBundle:Task:edit }
-    methods : PUT
+    methods : POST
 
 taskUpdate:
     path: /task/{id}
     defaults: { _controller: AppBundle:Task:edit }
     requirements:
         id: \d+
-    methods: POST
+    methods: PUT
 
 taskGet:
     path: /task/{id}

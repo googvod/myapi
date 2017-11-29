@@ -15,7 +15,6 @@ security:
         login:
             stateless: true
             anonymous: true
-            security: false
             form_login:
                 check_path:               /api/get-access-token
                 username_parameter: name

@@ -1,2 +1,4 @@
 TaskController:
     resource: "routing/TaskController.yml"
+AccessController:
+    resource: "routing/AccessController.yml"

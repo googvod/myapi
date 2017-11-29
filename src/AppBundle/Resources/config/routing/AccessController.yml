@@ -1,0 +1,4 @@
+getAccessToken:
+    path: /get-access-token
+    defaults: { _controller: AppBundle:Access:getToken }
+    methods : POST
