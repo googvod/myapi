@@ -2,7 +2,6 @@
 
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -11,7 +10,7 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
  * Class AccessController
  * @package AppBundle\Controller
  */
-class AccessController extends Controller
+class AccessController extends BaseController
 {
     /**
      * @ApiDoc(

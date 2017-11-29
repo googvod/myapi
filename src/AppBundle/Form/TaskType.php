@@ -20,12 +20,14 @@ class TaskType extends AbstractType
     {
         $builder
             ->add('content', Type\TextType::class, [
+                'required' => true,
                 'trim' => true,
                 'constraints' => [new NotBlank()]
             ])
             ->add('completed', Type\ChoiceType::class, [
+                'required' => false,
                 'choices' => [1, 0],
-                'empty_data' => 0
+                'constraints' => [new NotBlank()]
             ]);
     }
 }

@@ -31,7 +31,7 @@ class TaskController extends BaseController
      *     },
      *     parameters={
      *         {"name"="content", "dataType"="string", "required"=true, "description"="content"},
-     *         {"name"="completed", "dataType"="integer", "required"=false, "description"="is completed 0/1"}
+     *         {"name"="completed", "dataType"="integer", "required"=true, "description"="is completed 0/1"}
      *     },
      *     statusCodes={
      *         200="Returned when successful",
